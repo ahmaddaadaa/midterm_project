@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS reviews CASCADE;
+CREATE TABLE reviews (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER NOT NULL,
+  product_id INTEGER NOT NULL,
+  rating INTEGER,
+  comments VARCHAR(500) 
+);
