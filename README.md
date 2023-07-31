@@ -1,6 +1,7 @@
 LHL Node Skeleton
 =========
-
+***
+!["Recent Update"](https://github.com/ahmaddaadaa/midterm_project/blob/master/img/homePage.gif?raw=true)
 ## Project Setup
 
 The following steps are only for _one_ of the group members to perform.
