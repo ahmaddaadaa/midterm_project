@@ -1,7 +1,8 @@
 
 --USERS
 
---View products that have been posted 
+--View products that have been posted
+
 --Filter products by price/category
 --Create user-favorite-items list
 --Add too user-favorite-items list
@@ -10,12 +11,15 @@
 
 --Relate userID to favorite Items table
 --Relate products, users and favorite items
+
 --Relate productID and reviews
 
 
 --ADMINS
 
 --Create product/insert product
+INSERT INTO products (owner_id, name, category_id, price, description, photo_url)
+VALUES ()
 --Delete product
 --Amend product status/mark products as sold
 --Ammend product columns

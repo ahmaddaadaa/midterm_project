@@ -4,5 +4,5 @@ CREATE TABLE reviews (
   user_id INTEGER NOT NULL,
   product_id INTEGER NOT NULL,
   rating INTEGER,
-  comments VARCHAR(500) 
+  comments VARCHAR(1000)
 );

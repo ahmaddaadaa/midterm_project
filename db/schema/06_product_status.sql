@@ -6,3 +6,5 @@ CREATE TABLE product_status (
   number_of_items INTEGER,
   purchase_status VARCHAR(255),
 );
+
+--Combine with products?
