@@ -10,4 +10,4 @@ CREATE TABLE users (
   inbox text
 );
 
--- I think you are correct in thinking that we need another table for ibox.
+-- I think you are correct in thinking that we need another table for inbox.
