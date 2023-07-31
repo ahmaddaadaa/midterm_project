@@ -6,6 +6,8 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 
+
+
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -44,8 +46,31 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+
+// GET /
+app.get("/", (req, res) => {
+  res.render("mainPage");
+});
+
 app.get('/', (req, res) => {
   res.render('index');
+});
+
+app.get("/filter", (req, res) => {
+  res.render("filter");
+});
+
+app.get("/favorites", (req, res) => {
+  res.render("favorites");
+});
+
+app.get("/inbox", (req, res) => {
+  res.render("inbox");
+});
+
+app.get("/logout", (req, res) => {
+  res.render("logout");
 });
 
 app.listen(PORT, () => {
