@@ -1,0 +1,287 @@
+// Define variables for common sizes and colors
+$headerLogoDesktopSize: 150px;
+$headerLogoDesktopHeight: 140px;
+$headerLogoDesktopWidth: 157px;
+$headerLogoDesktopMargin: 10px 0px -3px -190px;
+$headerBottomWidth: 80%;
+
+$counterSize: 1.1rem;
+$counterHeight: 1.2rem;
+$borderColor: #dfbd69;
+
+// Define variables for common sizes Mobile view:
+$headerLogoSize: 100px;
+$headerTopWidth: 120px;
+$headerBottomWidth: 90%;
+
+/* Define the keyframes for the shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(5px); }
+}
+
+@mixin linkTapDesctop($hexadecimal_Color_Code){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $hexadecimal_Color_Code;
+  border-color: #dfbd69;
+  border-width: 2px;
+  border-style: solid;
+  border-bottom: none;
+  padding: 0px 7px 0px 7px;
+  border-radius: 20px 20px 0px 0px;
+  height: 50px;
+  width: 140px;
+
+}
+
+@mixin linkTapMobile($hexadecimal_Color_Code){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $hexadecimal_Color_Code;
+  border-color: #dfbd69;
+  border-width: 2px;
+  border-style: solid;
+  border-bottom: none;
+  padding: 0px 7px 0px 7px;
+  border-radius: 20px 20px 0px 0px;
+  height: 30px;
+  width: 65px;
+}
+
+
+
+
+
+
+/* CSS styling for the header */
+
+* {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+
+
+header {
+  background-color: #0e2433;
+  border-bottom: none;
+  width: 100%;
+  height: 140px;
+
+}
+
+header .profilePhoto {
+  width: 8em;
+  height: 8em;
+  margin: 1.5rem;
+
+}
+
+header .header-logo-desktop {
+  display: none;
+}
+
+
+/* desktop code starts here*/
+
+@media only screen and (min-width: 1000px) {
+
+// Define the header styles
+header {
+  display: flex;
+  align-items: flex-end;
+
+  // Styles for .header-logo-desktop
+  .header-logo-desktop {
+    background-image: url(../img/logo.png);
+    background-size: $headerLogoDesktopSize;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: $headerLogoDesktopHeight;
+    width: $headerLogoDesktopWidth;
+    margin: $headerLogoDesktopMargin;
+    &:hover {
+      box-shadow: 10px 10px 10px white;
+      animation: shake 0.5s 0.5;
+    }
+  }
+
+  // Styles for .header-mobile
+  .header-mobile {
+    display: none;
+  }
+
+  // Styles for .header-bottom
+  .header-bottom {
+    height: 35%;
+    width: $headerBottomWidth;
+    border-bottom: none;
+    margin-left: 14rem;
+    margin-right: 3rem;
+  }
+
+  // Styles for div nav inside header
+  div nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: none;
+    margin-right: 20px;
+
+    // Styles for links inside div nav
+    a {
+      color: whitesmoke;
+      &:hover {
+        color: $borderColor;
+        animation: shake 0.5s 0.5;
+      }
+
+      // Apply styles for the .counter class inside links
+      .counter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+        background-color: white;
+        border-radius: 20px;
+        border: 2px solid $borderColor;
+        width: $counterSize;
+        height: $counterHeight;
+      }
+    }
+  }
+}
+
+
+  #link1 {
+  @include linkTapDesctop(#0F9D58);
+  }
+
+  #link2 {
+    @include linkTapDesctop(#6a1b9a);
+  }
+
+  #link3 {
+    @include linkTapDesctop(#4285F4);
+
+  }
+
+  #link4 {
+  
+    @include linkTapDesctop(#DB4437);
+
+  }
+
+
+}
+
+
+/* mobile starts here*/
+
+@media screen and (max-width: 1000px) {
+
+// Define the header styles
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  border-bottom: none;
+
+  // Styles for .header-logo-mobile
+  .header-logo-mobile {
+    background-image: url(../img/logo.png);
+    background-size: $headerLogoSize;
+    background-repeat: no-repeat;
+    display: block;
+    size: 150%;
+    background-position: center;
+    margin: 0 auto;
+    padding: 80px 20px 40px 20px;
+  }
+
+  // Styles for .header-top
+  .header-top {
+    height: 100%;
+    width: $headerTopWidth;
+    margin-bottom: -5px;
+  }
+
+  // Styles for .header-bottom
+  .header-bottom {
+    height: 35%;
+    width: $headerBottomWidth;
+    border-bottom: none;
+  }
+}
+
+
+// Define variables for common colors and sizes
+$borderColor: #dfbd69;
+$counterSize: 1.1rem;
+$counterHeight: 1.2rem;
+
+// Define the header styles
+header {
+  div nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: none;
+
+    // Define styles for links inside the header
+    a {
+      color: whitesmoke;
+      &:hover {
+        color: $borderColor;
+      }
+
+      // Apply styles for the .counter class inside links
+      .counter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+        background-color: white;
+        border-radius: 20px;
+        border: 2px solid $borderColor;
+        width: $counterSize;
+        height: $counterHeight;
+      }
+    }
+  }
+}
+
+
+  
+  #link1 {
+    @include linkTapMobile(#0F9D58);
+    }
+  
+    #link2 {
+      @include linkTapMobile(#6a1b9a);
+    }
+  
+    #link3 {
+      @include linkTapMobile(#4285F4);
+  
+    }
+  
+    #link4 {
+    
+      @include linkTapMobile(#DB4437);
+  
+    }
+
+
+
+
+}
