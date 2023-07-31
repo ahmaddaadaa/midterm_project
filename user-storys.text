@@ -1,0 +1,44 @@
+User Stories
+
+A user story describes how users will interact with your application
+They have the form: As a ___, I want to _, because ____.
+eg. As a user, I want to be able to save posts, because I want to review them later.
+User stories can also be negated: As a __, I shouldn't be able to _, because ___.
+eg. As a user, I shouldn't be able to edit other users posts, because I don't own those posts.
+
+User Scenarios
+
+A user scenario is a syntactic alternative to user stories
+They have the form: Given __, when _, then ____.
+eg. Given that I am logged in, when I click favourite on a post, then it is added to my favourites.
+You can also chain on an and to user stories/scenarios
+eg. Given that I am logged in, when I click favourite on a post, then it is added to my favourites and the save icon will change to indicate success.
+
+
+Option 8: Buy/Sell Listing Website
+An app where you can put different types of things up for sale. You can pick a specific niche of items to sell for the app (a cars site, a shoes site, etc). This lets buyers find the items they are looking for quickly, and easily contact sellers.
+
+Requirements:
+1. users can see featured items on a main feed
+2. users can filter items by price,
+3. users can favourite items to check up on them later
+4. users can send messages to the user that is listing the item
+
+Admins can:
+
+1. post items, which can be seen by others
+2. remove items from the site
+3. mark items as SOLD!,
+4. send a message via app, email, or text back on negotiations in buying the said item
+
+USERS
+1. As a user, I want to see the featured products on the main page, because I would like to window shop for a bit.
+2. As a user, I want to be able to filter items by price, because money is short right now and I working with a budget.
+3. As a user, I want to be able to quickly view my favorite items, because I don't want to have to search for them for a long time to find it again.
+4. As a user, I want to be able to communicate with the seller, because I want to be able to discuss the price and negotate.
+
+ADMINS
+1.
+2.
+3.
+4.
