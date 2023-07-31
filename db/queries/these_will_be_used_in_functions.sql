@@ -18,7 +18,7 @@
 --ADMINS
 
 --Create product/insert product
-INSERT INTO products (owner_id, name, category_id, price, description, photo_url)
+INSERT INTO products (user_id, name, category_id, price, description, photo_url)
 VALUES ()
 --Delete product
 --Amend product status/mark products as sold

@@ -7,7 +7,6 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   inbox text
-
 );
 
 -- I think you are correct in thinking that we need another table for inbox.
