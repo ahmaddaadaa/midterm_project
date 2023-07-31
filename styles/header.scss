@@ -99,7 +99,7 @@ header {
 
   // Styles for .header-logo-desktop
   .header-logo-desktop {
-    background-image: url(../img/logo.png);
+    background-image: url(/img/logo.png);
     background-size: $headerLogoDesktopSize;
     background-repeat: no-repeat;
     display: inline-block;
@@ -174,7 +174,7 @@ header {
   }
 
   #link4 {
-  
+
     @include linkTapDesctop(#DB4437);
 
   }
@@ -197,7 +197,7 @@ header {
 
   // Styles for .header-logo-mobile
   .header-logo-mobile {
-    background-image: url(../img/logo.png);
+    background-image: url(/img/logo.png);
     background-size: $headerLogoSize;
     background-repeat: no-repeat;
     display: block;
@@ -261,24 +261,24 @@ header {
 }
 
 
-  
+
   #link1 {
     @include linkTapMobile(#0F9D58);
     }
-  
+
     #link2 {
       @include linkTapMobile(#6a1b9a);
     }
-  
+
     #link3 {
       @include linkTapMobile(#4285F4);
-  
+
     }
-  
+
     #link4 {
-    
+
       @include linkTapMobile(#DB4437);
-  
+
     }
 
 
