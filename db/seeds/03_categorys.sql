@@ -1,0 +1,10 @@
+INSERT INTO categories (type, description)
+VALUES ('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),
+('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),
+('Sports Wear', 'All coll!'),
+('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),
+('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),
+('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),
+('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),
+('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),
+('Kitchen Appliences', 'Appliances of all sorts and sizes for your kitchen!'),

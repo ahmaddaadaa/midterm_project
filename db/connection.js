@@ -10,7 +10,7 @@ const dbParams = {
 };
 
 const db = new Pool(dbParams);
-console.log(dbParams);
+console.log("Connected to database.")
 db.connect();
 
 module.exports = db;
