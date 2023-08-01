@@ -41,6 +41,7 @@ INNER JOIN categories ON products.id = categories.id;`;
       queryString += `WHERE categories.type =$${queryParams.length} `;
       isWhereInputted = true;
     }
+  }
     // Filter by both max and min
     if (options.min_price && options.max_price) {
       queryParams.push(options.min_price);
@@ -51,6 +52,7 @@ INNER JOIN categories ON products.id = categories.id;`;
       }
       queryString += `AND products.price BETWEEN $${queryParams.length - 1} AND $${queryParams.length} `;
     }
+
     //Filter by min
     if (!options.min_price && options.max_price) {
       queryParams.push(options.max_price);
@@ -60,6 +62,7 @@ INNER JOIN categories ON products.id = categories.id;`;
       }
       queryString += `AND products.price < $${queryParams.length} `;
     }
+
     //Filter by max
     if (options.min_price && !options.max_price) {
       queryParams.push(options.min_price);
@@ -79,7 +82,7 @@ INNER JOIN categories ON products.id = categories.id;`;
       queryString += `DESC`;
     }
 
-  }
+  
 
   return db.query(queryString, queryParams).then((res) => res.rows);
 };
