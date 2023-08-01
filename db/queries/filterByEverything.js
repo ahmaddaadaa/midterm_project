@@ -1,7 +1,7 @@
 const { options } = require('../../routes/users-api');
 const db = require('../connection');
 
-const filterAllItems = () => {
+const filterPriceAndSearch = () => {
 
   const queryParams = [];
 
@@ -66,9 +66,4 @@ const filterAllItems = () => {
 };
 
 
-module.exports = { filterByPrice };
-
-
-// WHERE price ${maxOrMin}
-// ORDER BY price $2
-// LIMIT 10;
+module.exports = { filterPriceAndSearch };
