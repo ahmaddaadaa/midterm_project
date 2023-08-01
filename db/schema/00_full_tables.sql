@@ -1,0 +1,46 @@
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS favorite_items CASCADE;
+DROP TABLE IF EXISTS reviews CASCADE;
+
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255),
+  password VARCHAR(255),
+  inbox VARCHAR(255)
+);
+
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY NOT NULL,
+  type VARCHAR(255),
+  description TEXT
+);
+
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  price MONEY,
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  description TEXT NOT NULL,
+  photo_url VARCHAR(255),
+  date_posted DATE,
+  is_sold BOOLEAN
+);
+
+CREATE TABLE favorite_items (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE
+);
+
+CREATE TABLE reviews (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
+  rating INTEGER,
+  comments VARCHAR(1000)
+);

@@ -1,14 +1,13 @@
 const db = require('../connection');
 
-const getFavoriteItems = () => {
+const filterByPrice = () => {
   return db.query(`
-  SELECT * FROM favorite_items
-
-
+  SELECT * FROM products
+  ORDER BY price ASC
   ;`)
     .then(data => {
       return data.rows;
     });
 };
 
-module.exports = { getFavoriteItems };
+module.exports = { filterByPrice };
