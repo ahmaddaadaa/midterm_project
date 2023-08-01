@@ -14,6 +14,9 @@ $headerLogoSize: 100px;
 $headerTopWidth: 120px;
 $headerBottomWidth: 90%;
 
+$calculated_ratio_desc:calc(50% - 28.5%);
+$calculated_ratio_mobile:calc(50% - 37%);
+
 /* Define the keyframes for the shake animation */
 @keyframes shake {
   0% { transform: translateX(0); }
@@ -54,6 +57,16 @@ $headerBottomWidth: 90%;
   width: 65px;
 }
 
+@mixin adjust_position_filter_box($calculated_ratio){
+  width: calc(55%);
+  height: 150px;
+  background-color: #6a1b9a;
+  position: fixed;
+  left: $calculated_ratio;
+  box-shadow: 10px 10px 10px black;
+  border-radius: 27% 27%;
+}
+
 
 
 
@@ -87,6 +100,24 @@ header .header-logo-desktop {
   display: none;
 }
 
+.put-up-item{
+  height: 400px;
+  width: 400px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.put-item-div{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 
 /* desktop code starts here*/
 
@@ -99,7 +130,7 @@ header {
 
   // Styles for .header-logo-desktop
   .header-logo-desktop {
-    background-image: url(/img/logo.png);
+    background-image: url(../img/logo.png);
     background-size: $headerLogoDesktopSize;
     background-repeat: no-repeat;
     display: inline-block;
@@ -162,22 +193,50 @@ header {
 
   #link1 {
   @include linkTapDesctop(#0F9D58);
+    
   }
 
-  #link2 {
-    @include linkTapDesctop(#6a1b9a);
+  // #link2 {
+  //   @include linkTapDesctop(#6a1b9a);
+  //   line-height: 50px;
+  // }
+  .link-button{@include linkTapDesctop(#6a1b9a);
+    line-height: 50px;
+    height: 53px;
   }
 
   #link3 {
     @include linkTapDesctop(#4285F4);
+    
 
   }
 
   #link4 {
-
+  
     @include linkTapDesctop(#DB4437);
 
   }
+
+  
+  #filter{
+  @include adjust_position_filter_box($calculated_ratio_desc);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .B{padding-left: 7px;}
+  #min_price{
+    padding-left: 15px;
+    max-width: 167px;
+  }
+  #max_price{
+    padding-right: 18px;
+    max-width: 160px;
+  }
+  }
+  
+  
+
 
 
 }
@@ -197,7 +256,7 @@ header {
 
   // Styles for .header-logo-mobile
   .header-logo-mobile {
-    background-image: url(/img/logo.png);
+    background-image: url(../img/logo.png);
     background-size: $headerLogoSize;
     background-repeat: no-repeat;
     display: block;
@@ -261,27 +320,35 @@ header {
 }
 
 
-
+  
   #link1 {
     @include linkTapMobile(#0F9D58);
     }
-
-    #link2 {
-      @include linkTapMobile(#6a1b9a);
+  
+    // #link2 {
+    //   @include linkTapMobile(#6a1b9a);
+      
+    // }
+    .link-button{@include linkTapDesctop(#6a1b9a);
+      line-height: 50px;
+      height: 33px !important;
+      width: 85px
     }
-
+  
     #link3 {
       @include linkTapMobile(#4285F4);
-
+  
     }
-
+  
     #link4 {
-
+    
       @include linkTapMobile(#DB4437);
-
+  
     }
 
-
+    #filter{
+      @include adjust_position_filter_box($calculated_ratio_mobile);
+      }
 
 
 }
