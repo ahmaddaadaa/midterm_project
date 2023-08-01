@@ -10,3 +10,4 @@ VALUES (1, 'Vaccum', 100, 1, 'This is used to vaccum any size of space!', 'incud
 (9, 'Vaccum', 100, 9, 'This is used to vaccum any size of space!', 'incude photoURL here', false),
 (10, 'Vaccum', 100, 10, 'This is used to vaccum any size of space!', 'incude photoURL here', false);
 
+--It was supposed to be category_type
