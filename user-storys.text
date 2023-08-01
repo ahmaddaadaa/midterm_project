@@ -35,12 +35,12 @@ Admins can:
 
 USERS
 1. As a user, I want to see the featured products on the main page, because I would like to window shop for a bit.
-2. As a user, I want to be able to filter items by price, because money is short right now and I working with a budget.
-3. As a user, I want to be able to quickly view my favorite items, because I don't want to have to search for them for a long time to find it again.
+2. As a user, I want to be able to filter items by price, because money is short right now and I am working with a budget.
+3. Given that I am logged in, I want to be able to quickly view my favorite items, because I don't want to search for them again.
 4. As a user, I want to be able to communicate with the seller, because I want to be able to discuss the price and negotate.
 
 ADMINS
-1.
-2.
-3.
-4.
+1. As an admin, I want to be able to post products to sell./create new product.
+2. As an admin, I want the permissions to delete any product from the system. Because the posting has to be in line with our policies.
+3.As an admin, I want to be able to mark products as sold
+4.As an admin, I want to be able to message with the person that is interested in my product for negotations.
