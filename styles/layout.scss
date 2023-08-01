@@ -1,5 +1,12 @@
 html body {
   margin: 0;
+
+}
+
+.putup-forsell{
+  height: 240px;
+  width: 240px;
+  background-color: aqua;
 }
 
 #my-container {
@@ -15,12 +22,11 @@ html body {
   margin: 5px;
   width: 275px; /* Fixed width */
   height: 275px; /* Fixed height */
-  background-color: red;
-  background-image: url(/img/book.jpg);
+  background-image: url(../img/book.jpg);
   background-size: 20%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position:center;
+  background-position:center; 
   .name{
     margin: 0.5rem;
     font-size: 1.0rem;
@@ -39,7 +45,7 @@ html body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+  
   }
 
 }
