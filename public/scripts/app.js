@@ -15,8 +15,9 @@ const table = [];
       success: function (data) {
         // 'data' contains the response from the API route (result of showProducts() function)
         console.log("Received data:", data);
+        console.log(data.length);
         
-        table.push(data[0])
+        table.push(data)
         // Assuming 'data' is an array of product objects, you can display them in the 'result' div
         // Modify this section based on your 'showProducts()' function's response format
 
@@ -31,6 +32,8 @@ const table = [];
 
   ///// container Generator:
   const generate_container = function (name, price) {
+    console.log("name:", name);
+    console.log("price:", price);
     const $listing_container = $(`  <div class="listings">
     <div class="name"> ${name}</div>
     <span class="price">${price}</span>
@@ -41,16 +44,18 @@ const table = [];
   };
 
   const renderProducts = function (table) {
-    const $container = $("#listings");
+    console.log("data table!!!!!!!!!!!", table);
+    const $container = $("#my-container");
     $container.empty();
     console.log("inside render products!!!");
+    const $listingsContainer = $('<div id="listings" class="listings"></div>'); 
     for (const obj of table) {
       const $newListing = generate_container(obj.name, obj.price);
       $container.append($newListing);
     }
   };
-
-  renderProducts(table);
+  
+  renderProducts(table[0]);
 
 });
 
