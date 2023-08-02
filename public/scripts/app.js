@@ -41,7 +41,7 @@ const table = [];
   };
 
   const renderProducts = function (table) {
-    const $container = $("#my_container");
+    const $container = $("#listings");
     $container.empty();
     console.log("inside render products!!!");
     for (const obj of table) {
