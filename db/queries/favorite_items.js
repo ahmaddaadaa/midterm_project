@@ -18,12 +18,14 @@ const addFavoriteItems = (user_id, favoriteProduct) => {
 const showFavoriteItems = (user_id) => {
   return db.query(`
   SELECT * FROM favorite_items
-  JOIN products ON
-
-
+  JOIN products ON product_id = products.id
+  WHERE user_id = $1
+  LIMIT 10
   ;`)
     .then(data => {
-      return data.rows;
+      return data.rows[0];
+    }).catch((error)=>{
+      console.log(error)
     });
 };
 
