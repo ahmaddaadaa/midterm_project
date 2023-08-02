@@ -27,7 +27,6 @@ CREATE TABLE products (
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
   description TEXT NOT NULL,
   photo_url VARCHAR(255),
-  date_posted DATE,
   is_sold BOOLEAN
 );
 
