@@ -1,4 +1,4 @@
-INSERT INTO products (user_id, name, price, category_id, description, photo_url, is_sold)
+INSERT INTO products (user_id, name, price, type, description, photo_url, is_sold)
 VALUES
   (1, 'Smartphone', 500, 1, 'Latest smartphone with advanced features.', 'http://example.com/photo1.jpg', false),
   (1, 'Laptop', 1000, 1, 'Powerful laptop for work and gaming.', 'http://example.com/photo2.jpg', false),

@@ -6,13 +6,13 @@ const{ createProductRecord } = require("../db/queries/inputNewProduct")
 //      /api
 // Route: /api/putItem (GET)
 router.post("/create", (req, res) => {
-  console.log(req);
-  const name = "Product Name";
-  const category_id = 1;
-  const price = 100;
-  const description = "Product Description";
-  const photo_url = "http://example.com/image.jpg";
-createProductRecord(name, category_id, price, description, photo_url)
+  console.log("req.body", req.body);
+  const name = req.body.nameInput;
+  const type = req.body.typeInput;
+  const price = req.body.priceInput;
+  const description = req.body.descriptionInput;
+  const photo_url = req.body.urlInput;
+createProductRecord(name, type, price, description, photo_url)
   .then(data => {
     console.log("I am inside the returned promise")
     console.log("new Record : "+ data);

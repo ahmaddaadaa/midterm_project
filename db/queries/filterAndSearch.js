@@ -12,13 +12,11 @@ const filterPriceAndSearch = () => {
   // This is from before I seeded categories.
 
 
-  //Category search query string
 
   let queryString = `
-SELECT name, price, categories.type as category_type
+SELECT name, price, type
 FROM products
-INNER JOIN categories ON products.id = categories.id
-WHERE 1=1 `;
+WHERE `;
 
 
 
@@ -34,13 +32,13 @@ WHERE 1=1 `;
     isWhereInputted = true;
   }
 
-  //Filter by category
-  if (options.categories) {
-    queryParams.push(options.categories);
+  //Filter by category (type)
+  if (options.type) {
+    queryParams.push(options.type);
     if (isWhereInputted) {
-      queryString += `AND categories.type = $${queryParams.length} `;
+      queryString += `AND type = $${queryParams.length} `;
     } else {
-      queryString += `WHERE categories.type =$${queryParams.length} `;
+      queryString += `WHERE type =$${queryParams.length} `;
       isWhereInputted = true;
     }
   }

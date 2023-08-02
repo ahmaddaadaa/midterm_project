@@ -13,20 +13,7 @@ VALUES
   ('James Robinson', 'james@example.com', 'hashed_password_10', 'inbox content 10');
 
 
-INSERT INTO categories (type, description)
-VALUES
-  ('Electronics', 'Electronics and gadgets category'),
-  ('Home and Kitchen', 'Home and kitchen products category'),
-  ('Fashion', 'Fashion and clothing category'),
-  ('Sports and Outdoors', 'Sports and outdoor equipment category'),
-  ('Beauty', 'Beauty and personal care category'),
-  ('Books', 'Books and literature category'),
-  ('Toys and Games', 'Toys and games category'),
-  ('Automotive', 'Automotive products category'),
-  ('Health', 'Health and wellness category'),
-  ('Pet Supplies', 'Pet supplies and accessories category');
-
-INSERT INTO products (user_id, name, price, category_id, description, photo_url, is_sold)
+INSERT INTO products (user_id, name, price, type, description, photo_url, is_sold)
 VALUES
   (1, 'Smartphone', 500, 1, 'Latest smartphone with advanced features.', 'http://example.com/photo1.jpg', false),
   (1, 'Laptop', 1000, 1, 'Powerful laptop for work and gaming.', 'http://example.com/photo2.jpg', false),
@@ -52,16 +39,3 @@ VALUES
   (4, 9),
   (5, 2),
   (5, 6);
-
-INSERT INTO reviews (user_id, product_id, rating, comments)
-VALUES
-  (1, 1, 5, 'Great smartphone with excellent camera.'),
-  (1, 3, 4, 'Love the design of this summer dress.'),
-  (2, 2, 4, 'Powerful laptop for all my tasks.'),
-  (2, 5, 5, 'Effective skincare set for my skin.'),
-  (3, 4, 4, 'Easy-to-use coffee maker.'),
-  (3, 8, 5, 'Spacious and durable camping tent.'),
-  (4, 3, 5, 'High-quality cookware set for my kitchen.'),
-  (4, 7, 4, 'Good performance from the tennis racket.'),
-  (5, 6, 3, 'The formal shirt fits well.'),
-  (5, 10, 4, 'Convenient hair dryer for everyday use.');
