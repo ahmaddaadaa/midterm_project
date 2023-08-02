@@ -1,3 +1,5 @@
+const{ createProductRecord } = require("../db/queries/inputNewProduct")
+
 $(document).ready(function() {
 
   $("form").submit(function(event) {
