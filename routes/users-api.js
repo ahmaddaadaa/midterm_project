@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/example', (req, res)=>{
-  
+
 })
 
 module.exports = router;
