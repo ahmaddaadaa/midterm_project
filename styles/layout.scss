@@ -38,7 +38,7 @@ html body {
     color: rgb(255, 254, 254);
     font-weight: bold;
     border: 2px solid #000;
-    width: calc(17% - 0.1rem);
+    width: calc(25% - 0.1rem);
     text-shadow: 0.1px 0.1px 0.1px black;
     background-color: #252527;
     text-size-adjust: 1rem;
@@ -47,8 +47,72 @@ html body {
     justify-content: center;
   
   }
+  .date-posted{
+    color: yellow;
+    text-shadow: 0.1px 0.1px 0.1px black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+  }
+
+  .lower{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .lastline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .description{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    
+    margin-bottom: 10px;
+    height: 25px;
+   
+    word-wrap: break-word;
+    box-shadow: 0px 10px 5px white;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px 2px black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  padding: 2px;
+    
+  }
+
+  .single-post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  .status{
+    color: rgb(4, 255, 4);
+    text-shadow: 0.1px 0.1px 0.1px black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+
+  }
+  .firstline{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 3px;
+  }
 
 }
+
+
 
 @media only screen and (max-width: 768px) {
   .listings {
