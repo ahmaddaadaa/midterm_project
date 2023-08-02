@@ -13,13 +13,5 @@ $(document).ready(function() {
 
     console.log(name, category_id, price, description, photo_url);
 
-  //   createProductRecord(name, category_id, price, description, photo_url, is_sold)
-  //     .then(() => {
-  //       console.log("Product record added");
-
-  //     })
-  //     .catch(error => {
-  //       console.error("Error :", error);
-  //     });
   });
 });
