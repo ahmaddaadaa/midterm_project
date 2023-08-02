@@ -2,44 +2,33 @@
 // const router  = express.Router();
 
 $(document).ready(function () {
-// const{ showProducts } = require("../../db/queries/products")
-const table = [];
 
-  $("#link2").click(function (event) {
-    console.log("Testing app.js")
-    // Make a GET request to the API route
-    $.ajax({
-      url: "/api", // Replace this with the actual URL of your API route
-      method: "GET",
-      dataType: "json",
-      success: function (data) {
-        // 'data' contains the response from the API route (result of showProducts() function)
-        console.log("Received data:", data);
-        console.log(data.length);
-        
-        table.push(data)
-        // Assuming 'data' is an array of product objects, you can display them in the 'result' div
-        // Modify this section based on your 'showProducts()' function's response format
+  const table = [];
+  const date = "time ago";
 
-      },
-      error: function (error) {
-        console.error("Error occurred:", error);
-        $("#result").html("Error occurred while fetching products.");
-      },
-    });
-  
-
-
-  ///// container Generator:
-  const generate_container = function (name, price) {
+  const generate_container = function (name, desc, price, status) {
     console.log("name:", name);
     console.log("price:", price);
-    const $listing_container = $(`  <div class="listings">
-    <div class="name"> ${name}</div>
-    <span class="price">${price}</span>
-    </div>
+    const $listing_container = $(`
+  
+      <div class="listings">
+          <div class="firstline">
+          <div class="name">${name}</div>
+          <div class="date-posted">${date}</div>
+          </div>
+          <div class=lower>
+          <div>
+          <p class="description">${desc}</p>
+          <div class="lastline">
+          <span class="price">${price}</span>
+          <div class="status">${status}</div>
+          </div>
+          </div>
+      </div>
+  
+  
     `);
-    console.log("generated Box: ",$listing_container);
+   
     return $listing_container;
   };
 
@@ -48,18 +37,36 @@ const table = [];
     const $container = $("#my-container");
     $container.empty();
     console.log("inside render products!!!");
-    const $listingsContainer = $('<div id="listings" class="listings"></div>'); 
+    const $listingsContainer = $('<div id="listings" class="listings"></div>');
     for (const obj of table) {
-      const $newListing = generate_container(obj.name, obj.price);
+      const $newListing = generate_container(
+        obj.name,
+        obj.description,
+        obj.price,
+        obj.status
+      );
       $container.append($newListing);
+      $newListing.css("background-image", `url(https://picsum.photos/id/237/200/300`);
     }
   };
+
+  const loadPosts = function () {
+    $.ajax({
+      url: "/api", // actual URL of API route
+      method: "GET",
+      dataType: "json",
+      success: function (data) {
+        table.push(data);
+        renderProducts(table[0]);
+      },
+      error: function (error) {
+        console.error("Error occurred:", error);
+      },
+    });
+  };
+  loadPosts();
+
   
-  renderProducts(table[0]);
-
 });
 
 
-});
-
-// https://api.jquery.com/jquery.ajax/
