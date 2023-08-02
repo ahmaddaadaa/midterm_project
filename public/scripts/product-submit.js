@@ -1,9 +1,9 @@
-const{ createProductRecord } = require("../db/queries/inputNewProduct")
+
 
 $(document).ready(function() {
-  $("form").submit(function(event) {
+  $("#create-item-form").submit(function(event) {
     event.preventDefault();
-
+    alert("Hello")
     const name = $("#nameInput").val().trim();
     const category_id = $("#typeInput").val().trim();
     const price = $("#priceInput").val().trim();
@@ -13,13 +13,13 @@ $(document).ready(function() {
 
     console.log(name, category_id, price, description, photo_url);
 
-    createProductRecord(name, category_id, price, description, photo_url, is_sold)
-      .then(() => {
-        console.log("Product record added");
+  //   createProductRecord(name, category_id, price, description, photo_url, is_sold)
+  //     .then(() => {
+  //       console.log("Product record added");
 
-      })
-      .catch(error => {
-        console.error("Error :", error);
-      });
+  //     })
+  //     .catch(error => {
+  //       console.error("Error :", error);
+  //     });
   });
 });

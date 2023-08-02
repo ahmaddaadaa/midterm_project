@@ -25,7 +25,7 @@ const showFavoriteItems = (user_id) => {
   LIMIT 10
   ;`)
     .then(data => {
-      return data.rows[0];
+      return data.rows;
     }).catch((error)=>{
       console.log(error)
     });

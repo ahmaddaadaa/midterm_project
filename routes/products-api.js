@@ -5,8 +5,8 @@ const router = express.Router();
 const{ createProductRecord } = require("../db/queries/inputNewProduct")
 //      /api
 // Route: /api/putItem (GET)
-router.get("/putItem", (req, res) => {
-  console.log(res);
+router.post("/create", (req, res) => {
+  console.log(req);
   const name = "Product Name";
   const category_id = 1;
   const price = 100;
@@ -15,12 +15,16 @@ router.get("/putItem", (req, res) => {
 createProductRecord(name, category_id, price, description, photo_url)
   .then(data => {
     console.log("I am inside the returned promise")
-    console.log("new Record : "+ data.rows);
-    res.json(data.rows);
+    console.log("new Record : "+ data);
+    // res.json(data.rows);
+    res.redirect("/")
   })
   .catch(error =>{
     console.log(error)});
 })
 
+router.get("/", (req, res) => {
+  res.render("products");
+});
 
 module.exports = router;

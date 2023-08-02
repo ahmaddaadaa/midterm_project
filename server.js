@@ -37,13 +37,14 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 // const api_routes = require('./routes/api-routes')
-
+const productsRoutes = require('./routes/products-api');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/products', productsRoutes);
 
 const apiRoutes = require("./routes/api-routes");
 app.use("/api", apiRoutes);
@@ -61,9 +62,9 @@ app.get("/", (req, res) => {
   res.render("mainPage");
 });
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+// app.get('/', (req, res) => {
+//   res.render('index');
+// });
 
 app.get("/filter", (req, res) => {
   res.render("filter");
@@ -76,11 +77,6 @@ app.get("/favorites", (req, res) => {
 app.get("/inbox", (req, res) => {
   res.render("inbox");
 });
-
-app.get("/putItem", (req, res) => {
-  res.render("putItem");
-});
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

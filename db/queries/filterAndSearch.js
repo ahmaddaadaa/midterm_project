@@ -17,7 +17,9 @@ const filterPriceAndSearch = () => {
   let queryString = `
 SELECT name, price, categories.type as category_type
 FROM products
-INNER JOIN categories ON products.id = categories.id;`;
+INNER JOIN categories ON products.id = categories.id
+WHERE 1=1 `;
+
 
 
   //REFACTOR LATER
@@ -33,8 +35,8 @@ INNER JOIN categories ON products.id = categories.id;`;
   }
 
   //Filter by category
-  if (options.category) {
-    queryParams.push(options.category);
+  if (options.categories) {
+    queryParams.push(options.categories);
     if (isWhereInputted) {
       queryString += `AND categories.type = $${queryParams.length} `;
     } else {
@@ -82,7 +84,7 @@ INNER JOIN categories ON products.id = categories.id;`;
       queryString += `DESC`;
     }
 
-  
+
 
   return db.query(queryString, queryParams).then((res) => res.rows);
 };

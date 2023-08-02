@@ -14,7 +14,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="../scripts/filter-script.js"></script>
-
+  <script type="text/javascript" src="../scripts/product-submit.js"></script>
 
 </head>
 
@@ -23,7 +23,8 @@
     <div class="put-item-div">
       <h3>list an Item for sail!</h3>
 
-      <form class="put-up-item" method ="post">
+      <form class="put-up-item" action="/products/create" method ="post">
+
         <!-- Input for URL -->
         <label for="urlInput">URL:</label>
         <input type="url" id="urlInput" name="urlInput" placeholder="Enter URL here" required>
