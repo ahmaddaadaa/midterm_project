@@ -1,11 +1,13 @@
 const db = require('../connection');
 
-const addFavoriteItems = (user_id, favoriteProduct) => {
+//The input should be a button on the icon on the main page?
+
+const addFavoriteItems = (user_id, product_id, userInput) => {
 
   return db.query(`
   INSERT INTO favorite_items (user_id, product_id)
   VALUES ($1, $2)
-  RETURNING *;`, [user_id, favoriteProduct])
+  RETURNING *;`, [user_id, product_id])
     .then((data) => {
       return data.rows[0];
     }).catch((error) => {
