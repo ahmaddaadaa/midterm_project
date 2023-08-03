@@ -1,7 +1,7 @@
 const { options } = require('../../routes/users-api');
 const db = require('../connection');
 
-const filterPriceAndSearch = () => {
+const filterPriceAndSearch = (options) => {
 
   const queryParams = [];
 
@@ -11,30 +11,26 @@ const filterPriceAndSearch = () => {
   // `;
   // This is from before I seeded categories.
 
-
-
   let queryString = `
 SELECT name, price, type
 FROM products
-WHERE `;
-
-
+ `;
 
   //REFACTOR LATER
   //The space for connecting query strings is after the WHERE clause and at the end of where AND is used
 
-  let isWhereInputted = typeof (Boolean);
+  let isWhereInputted = false;
 
   //Filter by product name
-  if (options.name) {
-    queryParams.push(`%${options.name}%`);
-    queryString += `WHERE products.name LIKE $${queryParams.length} `;
+  if (options.product_name) {
+    queryParams.push(`%${options.product_name}%`);
+    queryString += `WHERE products.name LIKE $${queryParams.length}`;
     isWhereInputted = true;
   }
 
-  //Filter by category (type)
-  if (options.type) {
-    queryParams.push(options.type);
+  // //Filter by category (type)
+  if (options.product_catagory) {
+    queryParams.push(options.product_catagory);
     if (isWhereInputted) {
       queryString += `AND type = $${queryParams.length} `;
     } else {
@@ -77,11 +73,11 @@ WHERE `;
     queryString += `
   ORDER BY price `;
 
-    //Filter by ascending or descending, ascending is happy path default
-    if (!options.ascOrDesc) {
-      queryString += `DESC`;
-    }
-
+    // //Filter by ascending or descending, ascending is happy path default
+    // if (!options.ascOrDesc) {
+    //   queryString += `DESC`;
+    // }
+console.log(queryString)
 
 
   return db.query(queryString, queryParams).then((res) => res.rows);

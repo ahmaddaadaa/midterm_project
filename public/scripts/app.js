@@ -10,7 +10,7 @@ $(document).ready(function () {
     console.log("name:", name);
     console.log("price:", price);
     const $listing_container = $(`
-  
+
       <div class="listings">
           <div class="firstline">
           <div class="name">${name}</div>
@@ -25,10 +25,10 @@ $(document).ready(function () {
           </div>
           </div>
       </div>
-  
-  
+
+
     `);
-   
+
     return $listing_container;
   };
 
@@ -50,9 +50,26 @@ $(document).ready(function () {
     }
   };
 
-  const loadPosts = function () {
+  $("#filter-container").submit(function(event) {
+    console.log(event)
+    event.preventDefault();
+    //
+//Get values from inputs
+//loadPosts({product_name:"", max_price:"" ,min_price:"", product_catagory:""});
+  });
+
+const constructUrl = function(filters){
+
+let queryString=`product_name=${filters.product_name}&max_price=${filters.max_price}&min_price=${filters.min_price}&product_catagory=${filters.product_catagory}`
+
+return encodeURI(queryString)
+}
+
+  const loadPosts = function (filters) {
+    console.log(`/api?${constructUrl(filters)}`);
+    // console.log(encodeURI("product_name=${data}t&max_price=1200"))
     $.ajax({
-      url: "/api", // actual URL of API route
+      url: `/api?${constructUrl(filters)}`,
       method: "GET",
       dataType: "json",
       success: function (data) {
@@ -64,9 +81,10 @@ $(document).ready(function () {
       },
     });
   };
-  loadPosts();
 
-  
+  loadPosts({product_name:"", max_price:"" ,min_price:"", product_catagory:""});
+
+
 });
 
 
