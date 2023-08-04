@@ -12,7 +12,8 @@ router.post("/create", (req, res) => {
   const price = req.body.priceInput;
   const description = req.body.descriptionInput;
   const photo_url = req.body.urlInput;
-createProductRecord(name, type, price, description, photo_url)
+  const date = Date.now();
+createProductRecord(name, type, price, description, photo_url, date)
   .then(data => {
     console.log("I am inside the returned promise")
     console.log("new Record : "+ data);

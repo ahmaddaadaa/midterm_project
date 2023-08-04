@@ -15,9 +15,9 @@ const{ showProducts } = require("../db/queries/products")
 //   filterPriceAndSearch(req.body)
 //   .then((data) => {
 //     return res.json(data);
-    
+
 //   })
-  
+
 
 // })
 
@@ -29,7 +29,7 @@ console.log("inside API route!!!",req.query)
 showProducts(req.query)
   .then((data) => {
     return res.json(data);
-    
+
   })
 
 return;

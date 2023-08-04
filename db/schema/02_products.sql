@@ -8,6 +8,7 @@ CREATE TABLE products (
   type VARCHAR(255),
   description TEXT NOT NULL,
   photo_url VARCHAR(255),
-  is_sold BOOLEAN
+  is_sold BOOLEAN,
+  date DATE
 
 );

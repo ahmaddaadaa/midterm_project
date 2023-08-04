@@ -26,7 +26,7 @@ html body {
   background-size: 20%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position:center; 
+  background-position:center;
   .name{
     margin: 0.5rem;
     font-size: 1.0rem;
@@ -45,7 +45,7 @@ html body {
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
   }
   .date-posted{
     color: yellow;
@@ -71,10 +71,10 @@ html body {
     flex-direction: column;
     justify-content: end;
     align-items: start;
-    
+
     margin-bottom: 10px;
     height: 25px;
-   
+
     word-wrap: break-word;
     box-shadow: 0px 10px 5px white;
     margin-left: 0.5vw;
@@ -86,7 +86,7 @@ html body {
     overflow: hidden;
     text-overflow: ellipsis;
   padding: 2px;
-    
+
   }
 
   .single-post{

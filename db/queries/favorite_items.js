@@ -2,7 +2,7 @@ const db = require('../connection');
 
 //The input should be a button on the icon on the main page?
 
-const addFavoriteItems = (user_id, product_id, userInput) => {
+const addFavoriteItems = (user_id, product_id) => {
 
   return db.query(`
   INSERT INTO favorite_items (user_id, product_id)
