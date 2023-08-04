@@ -42,11 +42,11 @@ const filterRoutes = require('./routes/filter-api');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
-app.use('/users', usersRoutes);
+//app.use('/api/users', userApiRoutes);
+//app.use('/api/widgets', widgetApiRoutes);
+//app.use('/users', usersRoutes);
 app.use('/products', productsRoutes);
-app.use('/filter', filterRoutes);
+//app.use('/filter', filterRoutes);
 
 const apiRoutes = require("./routes/api-routes");
 app.use("/api", apiRoutes);
@@ -65,9 +65,13 @@ app.get("/", (req, res) => {
   res.render("mainPage");
 });
 
-// app.get('/', (req, res) => {
-//   res.render('index');
+// app.post("/products/filter", (req, res) => {
+//   console.log("req.body",req.body);
+  
+//   res.render("mainPage");
 // });
+
+
 
 app.get("/filter", (req, res) => {
   res.render("filter");
