@@ -4,26 +4,24 @@ const router = express.Router();
 
 const{ filterPriceAndSearch } = require("../db/queries/filterAndSearch")
 
-//      /api
-// Route: /api/putItem (GET)
-// router.post("/filterResults", (req, res) => {
-//   console.log("req.body", req.body);
-//   filterPriceAndSearch(req.body).then((data)=>{
-//     res.redirect("/")
-//   });
 
+router.post("/filter", (req, res) => {
+  console.log("inside post reuest!!!!!!!");
+  console.log("req.body:",req.body);
+
+  
+
+})
+
+
+
+
+
+
+
+// router.get("/", (req, res) => {
+// console.log("req.query:", req.query);
+//   res.json({});
 // });
-
-console.log("inside / filter !!!!!!!!!!!!!");
-
-
-
-
-
-
-router.get("/", (req, res) => {
-console.log("req.query:", req.query);
-  res.json({});
-});
 
 module.exports = router;
