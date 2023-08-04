@@ -8,8 +8,8 @@ const{ filterPriceAndSearch } = require("../db/queries/filterAndSearch")
 router.post("/filter", (req, res) => {
   console.log("inside post reuest!!!!!!!");
   console.log("req.body:",req.body);
+filterPriceAndSearch(req.body)
 
-  
 
 })
 

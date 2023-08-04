@@ -28,7 +28,11 @@ router.get("/products", (req, res) => {
 console.log("inside API route!!!",req.query)
 showProducts(req.query)
   .then((data) => {
+    if(req.data){
+      return filterPriceAndSearch(req.data)
+    }
     return res.json(data);
+
 
   })
 

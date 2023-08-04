@@ -30,6 +30,7 @@ $(document).ready(function() {
 
     };
 
+
     console.log("filterParams", filterParams);
     loadProducts(filterParams);
 
@@ -123,6 +124,7 @@ const renderProducts = function(products) {
   }
 };
 const constructUrl = function(filters) {
+  console.log("----------------------------------", filters)
   let queryString = `product_name=${filters.product_name}&max_price=${filters.max_price}&min_price=${filters.min_price}&product_catagory=${filters.product_catagory}`;
 
   return encodeURI(queryString);
