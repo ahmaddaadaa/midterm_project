@@ -8,8 +8,6 @@ $(document).ready(function () {
     if(clicks === null) $("#filter").show();
     if (clicks % 2 === 0 ) {
       $("#filter").hide();
-      
-      console.log("even!!!");
     } else {
       $("#filter").show();
     }
