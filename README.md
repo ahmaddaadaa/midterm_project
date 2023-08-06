@@ -1,7 +1,27 @@
 LHL Node Skeleton
 =========
 ***
-!["Recent Update"](https://github.com/ahmaddaadaa/midterm_project/blob/master/img/homePage.gif?raw=true)
+### main page: (responsive behaviour)
+***
+!["main page"](https://github.com/ahmaddaadaa/midterm_project/blob/master/public/img/responsive.gif?raw=true)
+***
+### Add to Favorites: 
+***
+!["favorites feature"](https://github.com/ahmaddaadaa/midterm_project/blob/master/public/img/fav.gif?raw=true)
+***
+### Filter Products: 
+***
+!["filter favorite"](https://github.com/ahmaddaadaa/midterm_project/blob/master/public/img/filter.gif?raw=true)
+***
+### send an email to the seller: (click on the product name) 
+***
+!["send email"](https://github.com/ahmaddaadaa/midterm_project/blob/master/public/img/mail.gif?raw=true)
+***
+### put-up item for sell
+***
+!["put up item"](https://github.com/ahmaddaadaa/midterm_project/blob/master/public/img/putup.gif?raw=true)
+
+
 ## Project Setup
 
 The following steps are only for _one_ of the group members to perform.
