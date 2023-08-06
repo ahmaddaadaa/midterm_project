@@ -2,18 +2,9 @@
 // const router  = express.Router();
 
 $(document).ready(function() {
-  //   $("#filter-container").submit(function(event) {
-  //     console.log(event)
-  //     event.preventDefault();
-  //     //
-  // //Get values from inputs
-  // //loadPosts({product_name:"", max_price:"" ,min_price:"", product_catagory:""});
-  //   });
-
-  //?${constructUrl(filters)}
+  
   loadProducts();
-  //loadPosts({product_name:"", max_price:"" ,min_price:"", product_catagory:""});
-  //loadPosts(table[0]);
+
   $("#filter-container").submit(function(event) {
     event.preventDefault();
     let product_name = $(this).find("#product_name").val();
@@ -31,11 +22,46 @@ $(document).ready(function() {
     };
 
 
+    
+
     console.log("filterParams", filterParams);
     loadProducts(filterParams);
 
 
   });
+
+  let favoritesList = [];
+  $("main").on("click", "#add_to_favorites", function(event) {
+    const productName = $(this).closest(".listings").find(".name").text();
+    favoritesList.push(productName);
+    alert(`${productName} is added to favorites!`);
+    console.log("!!!!!!!!!!!product_name:", productName);
+  
+    // Prepare the data to be sent to the backend
+    const dataToSend = { productName };
+  
+   // Use AJAX to make a POST request to the backend
+    $.post("/api/favorites", dataToSend)
+      .then((response) => {
+        console.log("Response from favorites API:", response);
+      })
+      .fail((err) => {
+        console.error("Error posting to favorites:", err);
+      });
+  });
+  
+  $("#link1").click(function (event) {
+    event.preventDefault();
+    url = `api/favorites`
+    $.get(url).then((data) => {
+      console.log("my favorites: ", data);
+      renderProducts(data);
+    });
+
+
+  });
+
+
 
 
 
@@ -43,27 +69,16 @@ $(document).ready(function() {
 
 
 
-
-const date = "time ago";
-
 const loadProducts = function(filterParams) {
-  // console.log(`/api?${constructUrl(filters)}`);
-  // console.log(encodeURI("product_name=${data}t&max_price=1200"))
+
   let url = `/api/products`;
   if (filterParams) {
     url += `?${constructUrl(filterParams)}`;
   }
   $.get(url).then((data) => {
-    console.log("time ago long int: ", Date.now());
     renderProducts(data);
-    console.log("my data", data);
   });
 
-  // $.post("/api/products/filter").then((data) => {
-
-  //   renderProducts(data);
-  //   console.log("my data", data);
-  // });
 };
 
 
@@ -96,7 +111,7 @@ const createProductElement = function(product) {
         <p class="description">${product.description}</p>
         <div class="lastline">
         <span class="price">${product.price}</span>
-        <a  href="/"><i class="fa-solid fa-heart fa-shake fa-lg" style="color: #b42222;"></i></a>
+        <a href = ""><i id = "add_to_favorites" class="fa-solid fa-heart fa-shake fa-lg" style="color: #b42222;"></i></a>
         <div class="status">${checkproduct(product.is_sold)}</div>
         </div>
         </div>
