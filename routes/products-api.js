@@ -24,6 +24,10 @@ createProductRecord(name, type, price, description, photo_url, date)
     console.log(error)});
 })
 
+
+
+
+
 router.get("/", (req, res) => {
   res.render("products");
 });
